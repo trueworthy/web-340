@@ -1,3 +1,16 @@
+/*
+============================================
+; Title:  trueworthy-exercise-3.2.js
+; Author: Lea Trueworthy
+; Date:   08 March 2019
+; Description: Logging
+;===========================================
+*/
+
+// header
+const header = require('/Users/leatrueworthy/bu-webdev/web-340/trueworthy-header');
+console.log(header.display("Lea" , "Trueworthy" , "Exercise 3.2"));
+
 var express = require('express');
 var http = require('http');
 var path = require('path');
@@ -18,5 +31,5 @@ app.get('/', function(req, res){
 })
 
 http.createServer(app).listen(3000, function(){
-    console.log('Allication started and listenign on port %s', 3000);
+    console.log('Allication started and listening on port %s', 3000);
 });
