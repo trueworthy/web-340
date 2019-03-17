@@ -7,10 +7,6 @@
 ;===========================================
 */
 
-// header
-const header = require('/Users/leatrueworthy/bu-webdev/web-340/trueworthy-header');
-console.log(header.display("Lea", "Trueworthy", "Assignment 4.2"));
-
 var express = require("express");
 var http = require("http");
 var app = express();
