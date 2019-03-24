@@ -1,0 +1,23 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Exercise 5.2 - The Proxy Pattern</title>
+</head>
+<nav class="navbar navbar-dark bg-dark">
+    <a href="#" class="navbar-name">Home</a>
+</nav>
+<br /><br />
+
+<div role="main" class="container">
+    <h2>List of Names</h2>
+    <% if (name.length > 0) {%>
+
+    <% for (var i=0; i < name.length; i++) {%>
+    <!-- output -->
+    <div class="alert alert-success" role="alert"><%=name[i] %></div>
+    <%} %>
+    <%} %>
+</div>
+
+</html>
