@@ -12,7 +12,7 @@ var http = require("http");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
-var mongoDB = "mongodb+srv://test-user1:<sasquatch1*>@ltrueworthy-ems-tt90q.mongodb.net/test?retryWrites=true";
+var mongoDB = "mongodb+srv://test-user1:sasquatch1*@ltrueworthy-ems-tt90q.mongodb.net/test?retryWrites=true";
 mongoose.connect(mongoDB, {
     useNewUrlParser: true
 });
