@@ -12,9 +12,9 @@ var http = require("http");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
-var mongoDB = "mongodb+srv://Lea:736173717561746368@ltrueworthy-ems-tt90q.mongodb.net/test?retryWrites=true";
+var mongoDB = "mongodb+srv://test-user1:<sasquatch1*>@ltrueworthy-ems-tt90q.mongodb.net/test?retryWrites=true";
 mongoose.connect(mongoDB, {
-    useMongoClient:true
+    useNewUrlParser: true
 });
 
 mongoose.Promise = global.Promise;
@@ -28,6 +28,6 @@ db.once("open", function () {
 var app = express();
 app.use(logger("dev"));
 
-http.createServer(app).listen(8080, function () {
-    console.log("Application stated on port 8080");
+http.createServer(app).listen(8000, function () {
+    console.log("Application stated on port 8000");
 })
