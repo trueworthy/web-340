@@ -4,7 +4,7 @@
 ; Author: Professor Krasso
 ; Date:   3 March 2019
 ; Modified By: Lea Trueworthy
-; Description: EJS View
+; Description: Creates a Node.js server and returns the index.ejs page
 ;===========================================
 */
 

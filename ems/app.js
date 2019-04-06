@@ -1,3 +1,14 @@
+/*
+============================================
+; Title:  app.js
+; Author: Professor Krasso
+; Date:  March 2019
+; Modified By: Lea Trueworthy
+; Description: ejs Layout
+;===========================================
+*/
+
+//statements
 var express = require("express");
 var http = require("http");
 var path = require("path");

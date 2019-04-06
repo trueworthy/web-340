@@ -3,7 +3,7 @@
 ; Title:  trueworthy-exercise-3.3.js
 ; Author: Lea Trueworthy
 ; Date:   10 March 2019
-; Description: Advanced Routing
+; Description: Demonstrates advanced routing
 ;===========================================
 */
 

@@ -4,7 +4,7 @@ console.log('\n');
 
 /*
 ============================================
-; Title:  Program Header
+; Title:  Exercise 1.3
 ; Author: Professor Krasso 
 ; Date:   22 January 2019
 ; Modified By: Lea Trueworthy

@@ -4,11 +4,11 @@ console.log('\n');
 
 /*
 ============================================
-; Title:  Program Header
+; Title:  Assignment 1.5
 ; Author: Professor Krasso 
 ; Date:   24 January 2019
 ; Modified By: Lea Trueworthy
-; Description: Assignment 1.4 - Hello WORLD
+; Description: Assignment 1.5
 ;===========================================
 */ 
 

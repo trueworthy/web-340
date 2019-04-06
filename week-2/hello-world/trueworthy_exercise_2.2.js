@@ -1,3 +1,13 @@
+/*
+============================================
+; Title:  trueworthy-exercise-2.2.js
+; Author: Professor Krasso 
+; Date:   24 January 2019
+; Modified By: Lea Trueworthy
+; Description: Demonstrates how to create a Node.js server
+;===========================================
+*/ 
+
 var express = require('express');
 var http = require('http');
 
