@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<% include header%>
+
+<body>
+    <% include navbar %>
+
+    <div role="main" class="container">
+        <br />
+        <br />
+
+        <!-- Start logging data to table from DB -->
+        <% if (employees.length > 0) { %>
+        <h2>Employees:</h2>
+        <br />
+        <a href="/new">Add New Employee</a>
+        <table class="table table-dark table-striped table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% employees.forEach(function (employee) { %>
+                <tr>
+                    <td><%= employee.firstName %></td>
+                    <td><%= employee.lastName %></td>
+                </tr>
+            </tbody>
+            <% }) %>
+        </table>
+        <% } else { %> No entries found <a href="/new">Add employee</a>
+        <% } %>
+
+        <br />
+    </div>
+
+    <% include scripts %>
+</body>
+
+</html>
+

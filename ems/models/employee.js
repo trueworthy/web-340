@@ -9,17 +9,18 @@
 */
 
 // statements
-var mongoose = require('mongoose');
+var mongoose = require("mongoose");
+
 var Schema = mongoose.Schema;
 
-// employee Schema
-var EmployeeSchema = new Schema({
-  firstName: {type: String, require: true},
-  lastName: {type: String, require: true}
+// employee schema 
+var employeeSchema = new Schema({
+  firstName: String,
+  lastName: String
 });
 
 // model
-var Employee = mongoose.model("Employee", EmployeeSchema);
+var Employee = mongoose.model("Employee", employeeSchema);
 
 //expose the employee to calling files
 module.exports = Employee;
