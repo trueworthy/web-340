@@ -22,10 +22,12 @@
                 </tr>
             </thead>
             <tbody>
-                <% employees.forEach(function (employee) { %>
+                <% employees.forEach(function (entry) { %>
                 <tr>
-                    <td><%= employee.firstName %></td>
-                    <td><%= employee.lastName %></td>
+                    <td><%= entry.firstName %></td>
+                    <td><%= entry.lastName %></td>
+                    <td><a href="/view/<%= entry.name %>">VIEW</a></td>
+
                 </tr>
             </tbody>
             <% }) %>
@@ -40,4 +42,3 @@
 </body>
 
 </html>
-
