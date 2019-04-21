@@ -5,12 +5,12 @@
 <body>
     <% include navbar %>
 
-    <div role="main" class="container">
+    <div role="main" class="container width50">
         <br />
         <br />
 
         <!-- Start logging data to table from DB -->
-        <% if (employees.length > 0) { %>
+        <% if (employees.length) { %>
         <h2>Employees:</h2>
         <br />
         <a href="/new">Add New Employee</a>
@@ -19,15 +19,17 @@
                 <tr>
                     <th>First Name</th>
                     <th>Last Name</th>
+                    <th>Functions</th>
                 </tr>
             </thead>
             <tbody>
-                <% employees.forEach(function (entry) { %>
+                <% employees.forEach(function (employee) { %>
                 <tr>
-                    <td><%= entry.firstName %></td>
-                    <td><%= entry.lastName %></td>
-                    <td><a href="/view/<%= entry.name %>">VIEW</a></td>
-
+                    <td><%= employee.firstName %></td>
+                    <td><%= employee.lastName %></td>
+                    <td>
+                        <a class="text-warning" id="viewLink" href="/view/<%= employee.firstName %>">View</a>
+                    </td>
                 </tr>
             </tbody>
             <% }) %>

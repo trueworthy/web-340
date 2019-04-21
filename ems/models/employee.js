@@ -8,19 +8,17 @@
 ;===========================================
 */
 
-// statements
 var mongoose = require("mongoose");
 
 var Schema = mongoose.Schema;
 
-// employee schema 
 var employeeSchema = new Schema({
   firstName: String,
   lastName: String
 });
 
-// model
+// employee model defined
 var Employee = mongoose.model("Employee", employeeSchema);
 
-//expose the employee to calling files
+// make module accesible with export
 module.exports = Employee;

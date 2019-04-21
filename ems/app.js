@@ -7,6 +7,7 @@
 ; Description: ejs Layout 
 : - adding mLab string, mongoose, and Employee model (4/7/19)
 ; - adding helmet bodyParser cookie and csrf (4/14/19)
+; - adding to view.js and cleaning up code (working) (4/21/19)
 ;===========================================
 */
 
@@ -22,42 +23,41 @@ var bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");
 var csrf = require("csurf");
 
-// CSRF setup
-var csrfProtection = csrf({ cookie: true });
-
-var mongoDB = "mmongodb+srv://admin:admin@ltrueworthy-ems-tt90q.mongodb.net/test?retryWrites=true";
-mongoose.connect(mongoDB, {
-  useNewUrlParser: true
-});
-
 var Employee = require("./models/employee");
 
 // CSRF setup
 var csrfProtection = csrf({ cookie: true });
 
-// application
 var app = express();
+var mongoDB = "mmongodb+srv://admin:admin@ltrueworthy-ems-tt90q.mongodb.net/test?retryWrites=true";
+mongoose.connect(mongoDB, {
+  useNewUrlParser: true
+});
+
+mongoose.connect(mongoDB, {
+  useMongoClient: true
+});
+
 mongoose.Promise = global.Promise;
+
 var db = mongoose.connection;
-db.on("error", console.error.bind(console, "MongoDB connection error: "));
+
+db.on("error", console.error.bind(console, "connection error: "));
+
 db.once("open", function () {
-  console.log("Application connected to mLab -mongoDB");
+  console.log("Application connected to mLab MongoDB instance");
 });
 
 // Use statements
 app.use(helmet.xssFilter());
-
 app.use(logger("short"));
 app.use(
   bodyParser.urlencoded({
     extended: true
   })
 );
-
 app.use(cookieParser());
-
 app.use(csrfProtection);
-
 app.use(function (req, res, next) {
   var token = req.csrfToken();
   res.cookie("XSRF-TOKEN", token);
@@ -71,16 +71,11 @@ var employee = new Employee({
 });
 
 app.set("views", path.resolve(__dirname, "views/"));
-
 app.set("view engine", "ejs");
+app.set("port", process.env.PORT || 8080)
 
-// use Morgan Login
 app.use(logger("short"));
-
-// Styling fix from overstack
 app.use(express.static(__dirname + "/public"));
-
-// Routing
 app.get("/", function (req, res) {
   res.render("index", {
     title: "Homepage"
@@ -103,7 +98,7 @@ app.post("/process", function (req, res) {
 
   var newEmployee = console.log(newEmployee);
 
-  // Create model
+  // Create employee model
   var newEmployee = new Employee({
     firstName,
     lastName
@@ -128,8 +123,23 @@ app.get("/list", function (req, res) {
   });
 });
 
+app.get("/view/:queryName", function (req, res) {
+  var queryName = req.params.queryName;
+  Employee.find({ firstName: queryName }, function (error, employees) {
+    if (error) throw error;
+    console.log(employees);
+    if (employees.length > 0) {
+      res.render("view", {
+        title: "Employee Record",
+        employee: employees
+      });
+    } else {
+      res.redirect("/list");
+    }
+  });
+});
+
 // create server
 http.createServer(app).listen(8080, function () {
   console.log("Application has started and is listening on port 8080, Hooray!");
-
 });

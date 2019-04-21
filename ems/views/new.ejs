@@ -9,38 +9,33 @@
     <% include navbar %>
 
     <div role="main" class="container" style="width: 50%;">
-        <br />
-        <div class="card card-inverse" style="background-color: #333; border-color:#333; color: white;">
-            <div class="card-block">
-                <h2 class="card-title pt-3 pl-3">New Employee</h2>
-                
-                <!-- form -->
-                <form method="post" action="/process">
-                    <div class="form-group pl-5 pr-5">
-                        <label for="firstName" class="col-form-label">First Name:</label>
-                        <input type="text" class="form-control" id="firstName" name="firstName" />
+        <br /><br />
 
-                        <label for="lastName" class="col-form-label">Last Name:</label>
-                        <input type="text" class="form-control" id="lastName" name="lastName" />
-                    </div>
+        <h2>New Employee</h2>
+        <form method="post" action="/process">
+            <div class="form-group pl-5 pr-5">
+                <label for="firstName" class="col-form-label">First Name:</label>
+                <input type="text" class="form-control" id="firstName" name="firstName" />
 
-                    <!--submit button -->
-                    <div class="form-group row justify-content-center">
-                        <!-- CSRF token -->
-                        <input name="_csrf" value="<%= csrfToken %>" type="hidden" />
-
-                        <button type="submit" class="btn btn-success float-right">
-                            Submit
-                        </button>
-                    </div>
-                </form>
+                <label for="lastName" class="col-form-label">Last Name:</label>
+                <input type="text" class="form-control" id="lastName" name="lastName" />
             </div>
-        </div>
 
-        <br />
-        <br />
+            <!-- Start submit button -->
+            <div class="form-group row justify-content-center">
+                <!-- CSRF token -->
+                <input name="_csrf" value="<%= csrfToken %>" type="hidden" />
 
-        <a href="/list">Return to List</a>
+                <button type="submit" class="btn btn-success float-right">
+                    Submit
+                </button>
+            </div>
+            <!-- End submit button -->
+        </form>
+
+        <br /><br />
+
+        <a class="btn btn-secondary" href="/list/" role="button">Return to list</a>
     </div>
 
     <% include scripts %>
