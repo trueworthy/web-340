@@ -1,13 +1,13 @@
 /*
 ============================================
-; Title:  app.js
+; Title:  app assignment 9 final milestone
 ; Author: Professor Krasso
 ; Date:  March 2019
 ; Modified By: Lea Trueworthy
 ; Description: ejs Layout 
-: - adding mLab string, mongoose, and Employee model (4/7/19)
-; - adding helmet bodyParser cookie and csrf (4/14/19)
-; - adding to view.js and cleaning up code (working) (4/21/19)
+: adding mLab string, mongoose, and Employee model (4/7/19)
+; adding helmet bodyParser cookie and csrf (4/14/19)
+; adding to view.js and cleaning up code (working) (4/21/19)
 ;===========================================
 */
 
@@ -22,8 +22,6 @@ var Employee = require('./models/employee');
 var bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");
 var csrf = require("csurf");
-
-var Employee = require("./models/employee");
 
 // CSRF setup
 var csrfProtection = csrf({ cookie: true });

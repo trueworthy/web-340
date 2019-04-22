@@ -1,3 +1,12 @@
+# IDE extensions
+.vscode/*
+.idea/*
+*.iml
+
+# node
+node_modules
+.node_repl_history
+
 # Logs
 logs
 *.log

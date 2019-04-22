@@ -1,6 +1,6 @@
 /*
 ============================================
-; Title:  employee.js
+; Title:  employee.js final milestone
 ; Author: Professor Krasso
 ; Date:   6 April 2019
 ; Modified By: Lea Trueworthy
