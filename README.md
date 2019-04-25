@@ -1,2 +1,7 @@
 # web-340
-node
+Node.js with Express
+
+# contributors
+Professor Krasso - Bellevue University
+
+Lea Trueworthy - Bellevue University
