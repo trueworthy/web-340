@@ -1,0 +1,12 @@
+{
+    "name": "chai-example",
+    "author": "Lea Trueworthy",
+    "private": true,
+    "dependencies": {
+        "chai": "^4.2.0",
+        "mocha": "^6.0.2"
+    },
+    "scripts": {
+        "test": "mocha"
+    }
+}
