@@ -11,7 +11,6 @@
 ;===========================================
 */
 
-//statements
 var express = require('express');
 var http = require('http');
 var path = require('path');
@@ -70,7 +69,7 @@ var employee = new Employee({
 
 app.set("views", path.resolve(__dirname, "views/"));
 app.set("view engine", "ejs");
-app.set("port", process.env.PORT || 8080)
+app.set("port", process.env.PORT || 8080);
 
 app.use(logger("short"));
 app.use(express.static(__dirname + "/public"));
@@ -96,11 +95,6 @@ app.post("/process", function (req, res) {
 
   var newEmployee = console.log(newEmployee);
 
-  // Create employee model
-  var newEmployee = new Employee({
-    firstName,
-    lastName
-  });
 
   // save
   newEmployee.save(function (error) {
